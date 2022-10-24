@@ -1,0 +1,63 @@
+@import url('Settings/reset.css');
+@import url('Settings/scrollbar.css');
+@import url('Settings/aos.css');
+@import url('Components/header.css');
+@import url('Components/main-page.css');
+@import url('Components/about-me.css');
+@import url('Components/works.css');
+@import url('Components/services.css');
+@import url('Components/footer.css');
+@import url('Components/popup-form.css');
+
+@font-face{font-family:'IBM-Plex-Mono-400';src:url('../Fonts/IBMPlexMono-Regular.ttf');}
+@font-face{font-family:'IBM-Plex-Mono-500';src:url('../Fonts/IBMPlexMono-Medium.ttf');}
+@font-face{font-family:'Mont-HeavyDEMO';src:url('../Fonts/Mont-HeavyDEMO.otf');}
+
+::selection{ color: white;background: #338eb8; }
+::-webkit-scrollbar{ display: none; }
+
+html{ scroll-behavior: smooth; overflow-x: hidden; }
+body{ background-color: #080808; transition: background-color 1s ease; }
+.main-page{ max-width: 1920px; margin: 0 auto; }
+.color-orange { background-color: #338eb8; }
+.color-black { background-color: #080808; }
+
+a, button, p, h5, h6, h4, li, input, select, label{
+    display: block;
+    font-family: 'IBM-Plex-Mono-400';
+    font-size: 10px;
+    line-height: normal;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+button{
+    background-color: transparent;
+    border: 1px solid #FFFFFF;
+    border-radius: 89px;
+    padding: 10px 22px;
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover{ text-decoration: underline; }
+
+button:hover{
+    background-color: #338eb8;
+    border: 1px solid #338eb8;
+}
+
+.button-reset, .button-reset:hover{
+    background-color: transparent;
+    padding: 0;
+    border: 0;
+}
+
+h1, h2, h3{
+    font-family: 'Mont-HeavyDEMO';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 400px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}

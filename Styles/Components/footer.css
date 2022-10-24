@@ -1,0 +1,48 @@
+.footer{
+    max-width: 1920px;
+    padding: 312px 40px 0;
+    overflow: hidden;
+}
+
+.start-project{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: flex-end
+}
+
+.start-project > h3{
+    line-height: 78px;
+    font-size: 60px;
+}
+
+.start-project:hover{ filter: invert(); }
+
+.footer-information{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    justify-content: space-between;
+    padding-top: 400px;
+}
+
+.footer-links{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    padding-bottom: 150px;
+}
+
+.footer-information > li > a:hover, .footer-links > li > a:hover{
+    filter: invert();
+    text-decoration: none;
+}
+
+.start-project > h4{
+    max-width: 250px;
+    width: 100%;
+    font-size: 24px;
+    line-height: 31px;
+    color: #ECECEC;
+    word-wrap: break-word;
+}
