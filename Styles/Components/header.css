@@ -24,7 +24,7 @@
 }
 
 .nav-menu__content > li > a{
-    font-family: 'NeutralFace';
+    font-family: 'Mont-HeavyDEMO';
     font-size: 34px;
 }
 
@@ -55,7 +55,7 @@
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    background-color: #FF2E00;
+    background-color: #338eb8;
     opacity: 0;
     padding: 30px;
     user-select: text;
