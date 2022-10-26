@@ -21,6 +21,14 @@
     line-height: 78px;
     overflow: hidden;
 }
+.about-me > h9{
+    font-family: 'IBM-Plex-Mono-400';
+    font-style: normal;
+    font-weight: 60;
+    font-size: 60px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
 
 .circle{
     position: absolute;
