@@ -63,7 +63,16 @@ h1, h2, h3{
 }
 
 h9{
-    font-family: 'IBM-Plex-Mono-400';
+    font-family: 'IBM-Plex-Mono-500';
+    font-style: normal;
+    font-weight: 60;
+    font-size: 60px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+h8{
+    font-family: 'Mont-HeavyDEMO';
     font-style: normal;
     font-weight: 60;
     font-size: 60px;
