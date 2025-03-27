@@ -16,7 +16,7 @@ FONT_PATH = "Mayonice.ttf"
 CSV_PATH = "partecipanti.csv"
 TEMPLATE_BASENAME = "ricetta_ssn"
 TEMPLATE_OPTIONS = [f"{TEMPLATE_BASENAME}{i}.png" for i in range(1, 8)]
-POS_NOME = (285, 600)
+POS_NOME = (285, 200)
 FONT_SIZE = 36
 
 # Carica font
