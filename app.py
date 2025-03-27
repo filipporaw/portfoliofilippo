@@ -1,25 +1,21 @@
-
 from flask import Flask, request, send_file
+from flask_cors import CORS
 from PIL import Image, ImageDraw, ImageFont
 import io
 import csv
 import os
 from datetime import datetime
-from flask_cors import CORS
-app = Flask(__name__)
-CORS(app)
-app = Flask(__name__)
 
-# Percorso immagine template
-TEMPLATE_PATH = "ricetta_ssn.png"  # Assicurati che sia caricato nella root
-FONT_PATH = "arial.ttf"  # Può essere assente, fallback su font di default
+app = Flask(__name__)
+CORS(app)  # ✅ Abilita richieste da altri domini (es. GitHub Pages)
+
+TEMPLATE_PATH = "ricetta_ssn.png"
+FONT_PATH = "arial.ttf"  # Se non c’è, usa font di default
 CSV_PATH = "partecipanti.csv"
-
-# Posizione del testo sulla ricetta
 POS_NOME = (170, 220)
 FONT_SIZE = 36
 
-# Inizializza file CSV se non esiste
+# Inizializza il file CSV (solo la prima volta)
 if not os.path.exists(CSV_PATH):
     with open(CSV_PATH, mode='w', newline='') as file:
         writer = csv.writer(file)
@@ -30,11 +26,10 @@ def genera_ricetta():
     nome = request.form.get("nome", "Nome Sconosciuto").upper()
     accompagnatore = request.form.get("accompagnatore") == "1"
 
-    # Aggiungi +1 se ha selezionato accompagnatore
     if accompagnatore:
         nome += " +1"
 
-    # Carica immagine e font
+    # Carica il template
     img = Image.open(TEMPLATE_PATH).convert("RGB")
     try:
         font = ImageFont.truetype(FONT_PATH, FONT_SIZE)
@@ -44,12 +39,12 @@ def genera_ricetta():
     draw = ImageDraw.Draw(img)
     draw.text(POS_NOME, nome, font=font, fill="red")
 
-    # Salva in memoria
+    # Salva immagine in memoria
     buffer = io.BytesIO()
     img.save(buffer, format="PNG")
     buffer.seek(0)
 
-    # Salva nome nel CSV
+    # Log nel CSV (opzionale)
     with open(CSV_PATH, mode='a', newline='') as file:
         writer = csv.writer(file)
         writer.writerow([datetime.now().isoformat(), nome, "SI" if accompagnatore else "NO"])
