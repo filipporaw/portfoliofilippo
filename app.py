@@ -1,4 +1,3 @@
-
 from flask import Flask, request, send_file
 from flask_cors import CORS
 from PIL import Image, ImageDraw, ImageFont
@@ -61,13 +60,19 @@ def genera_ricetta():
         writer = csv.writer(file)
         writer.writerow([datetime.now().isoformat(), nome, "SI" if accompagnatore else "NO"])
 
-    return send_file(buffer, mimetype='image/png', download_name=f"ricetta_{nome.replace(' ', '_')}.png")
+    # Nome del file semplice
+    filename = f"ricetta_{nome.replace(' ', '_')}.png"
 
+    return send_file(
+        buffer,
+        mimetype='image/png',
+        as_attachment=True,
+        download_name=filename
+    )
 
 @app.route("/partecipanti")
 def scarica_csv():
     return send_file(CSV_PATH, as_attachment=True)
-
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
