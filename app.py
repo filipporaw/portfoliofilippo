@@ -12,8 +12,8 @@ CORS(app)  # ✅ Abilita richieste da altri domini (es. GitHub Pages)
 TEMPLATE_PATH = "ricetta_ssn.png"
 FONT_PATH = "arial.ttf"  # Se non c’è, usa font di default
 CSV_PATH = "partecipanti.csv"
-POS_NOME = (240, 165)
-FONT_SIZE = 200
+POS_NOME = (160, 165)
+FONT_SIZE = 1000
 
 try:
     font = ImageFont.truetype(FONT_PATH, FONT_SIZE)
