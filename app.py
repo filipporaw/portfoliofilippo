@@ -13,7 +13,7 @@ TEMPLATE_PATH = "ricetta_ssn.png"
 FONT_PATH = "arial.ttf"  # Se non c’è, usa font di default
 CSV_PATH = "partecipanti.csv"
 POS_NOME = (170, 220)
-FONT_SIZE = 36
+FONT_SIZE = 230
 
 # Inizializza il file CSV (solo la prima volta)
 if not os.path.exists(CSV_PATH):
