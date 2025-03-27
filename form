@@ -113,7 +113,7 @@
       e.preventDefault();
 
       const formData = new FormData(form);
-      const response = await fetch("https://replit.com/@fmagnaghi/RecipeMaker", {
+      const response = await fetch("https://recipemaker.fmagnaghi.repl.co/genera?nome=YourName", {
         method: "POST",
         body: formData
       });
