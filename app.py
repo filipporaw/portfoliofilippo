@@ -63,5 +63,11 @@ def genera_ricetta():
 
     return send_file(buffer, mimetype='image/png', download_name=f"ricetta_{nome.replace(' ', '_')}.png")
 
+
+@app.route("/partecipanti")
+def scarica_csv():
+    return send_file(CSV_PATH, as_attachment=True)
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
